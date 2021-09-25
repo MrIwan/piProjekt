@@ -1,0 +1,126 @@
+{% extends "base_auth.html" %} {% block title %}Settings{% endblock %} {% block content_auth %}
+
+<br/>
+
+<div class="container overflow-hidden">
+    <div class="row gy-5">
+        <div class="col-6">
+            <div class="p-3 border bg-light">
+                <h2>Profiel Information</h2>
+
+                <form action="{{ url_for('setting.settings_chprofiel') }}" method="POST">
+                    <div class="form-group">
+                      <div class="form-floating mb-3">
+                        <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        name="email"
+                        placeholder="Enter email"
+                        value="{{user.email}}"
+                        />
+                        <label for="email">Email Address</label>
+                      </div>
+                      
+                      
+                    </div>
+                    <div class="form-floating mb-3">
+                      
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="firstName"
+                        name="firstName"
+                        placeholder="Enter first name"
+                        value="{{user.first_name}}"
+                      />
+                      <label for="firstName">First Name</label>
+                    </div>
+                    <br />
+                    <button type="Change" class="btn btn-primary">Change</button>
+                  </form>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="p-3 border bg-light">
+                <h2>Change Password</h2>
+
+                <form action="{{ url_for('setting.settings_chpwd') }}" method="POST">
+                    <div class="form-floating mb-3">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password_cur"
+                        name="password_cur"
+                        placeholder="Enter Current Password"
+                        />
+                        <label for="password_cur">Current Password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password1"
+                        name="password1"
+                        placeholder="Enter password"
+                        value=""
+                      />
+                      <label for="password1">New Password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password2"
+                        name="password2"
+                        placeholder="Confirm password"
+                        value=""
+                      />
+                      <label for="password2">New Password (Confirm)</label>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary">Change</button>
+                  </form>
+        </div>
+    </div>
+    <div class="col-6">
+      <div class="p-3 border bg-light">
+          <h2>Generate Token</h2>
+          {% if user.tokens%}
+            <h5>Your Tokens</h5>
+            <ul class="list-group">
+              {% for t in user.tokens %}
+                <li class="list-group-item">
+                  <div class="row">
+                    <div class="col">
+                        <input type="text" class="form-control" value={{t.token}}>
+                    </div>
+                    <div class="col justify-content-end">
+                      <button type="button" class="btn btn-outline-danger" onClick="deleteToken({{ t.id }})">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                          <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                          <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <form action="{{ url_for('setting.settings_token') }}" class="row g-2">
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary">Create Token</button>
+            </div>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script
+      type="text/javascript"
+      src="{{ url_for('static', filename='settings.js') }}"
+    ></script>
+
+{% endblock %}

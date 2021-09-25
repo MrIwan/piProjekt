@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+    %}
+<br />
+      <div class="h-100 container-fluid">
+        <div class="row">
+            <div class="col-9">
+
+              <div class="container-fluid">{% block content_auth %} {% endblock %}</div>
+
+            </div>
+            <div class="col">
+                <div class="h-100 p-3 border bg-light">
+                    <h2>User online</h2>
+                    <ul id="online_user" class="list-group">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endblock %}

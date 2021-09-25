@@ -1,0 +1,61 @@
+
+{% extends "base_auth.html" %} {% block title %}Home{% endblock %}
+
+{% block content_auth %}
+
+<div class="container">
+    <div class="h-100 p-3 border bg-light">
+        <h1 class="position-relative" style="text-align: center;">Server</h1>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div id="ChartCpu" style="width: 600px;height:400px;"></div>
+                </div>
+                <div class="col-6">
+                    <div id="ChartRam" style="width: 600px;height:400px;"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="start_stop_button" type="button" class="btn btn-outline-success">Start</button>
+    </div>
+</div>
+
+<br />
+
+<div id="available_server" class="container">
+    <div class="h-100 p-3 border bg-light">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">name</th>
+                    <th scope="col">status</th>
+                    <th id="download" scope="col">#</th>
+                    <th id="start/stop button" scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+</div>
+<script 
+    src="https://cdn.socket.io/3.1.3/socket.io.min.js" 
+    integrity="sha384-cPwlPLvBTa3sKAgddT6krw0cJat7egBga3DJepJyrLl4Q9/5WLra3rrnMcyTyOnh" 
+    crossorigin="anonymous"
+></script>
+
+
+<script
+    type="text/javascript"
+    src="{{ url_for('static', filename='charts.js') }}"
+></script>
+<script
+    type="text/javascript"
+    src="{{ url_for('static', filename='home.js') }}"
+></script>
+
+
+{% endblock %} 
