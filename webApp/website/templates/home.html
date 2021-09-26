@@ -29,11 +29,11 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">#</th>
                     <th scope="col">name</th>
                     <th scope="col">status</th>
-                    <th id="download" scope="col">#</th>
-                    <th id="start/stop button" scope="col"></th>
+                    <th scope="col">Server Address</th>
+                    <th scope="col">#</th>
+                    <th scope="col"></th>
                 </tr>
             </thead>
             <tbody id="tbody">
@@ -51,6 +51,10 @@
 <script
     type="text/javascript"
     src="{{ url_for('static', filename='charts.js') }}"
+></script>
+<script
+    type="text/javascript"
+    src="{{ url_for('static', filename='gameServer.js') }}"
 ></script>
 <script
     type="text/javascript"

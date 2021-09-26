@@ -6,6 +6,7 @@ def create_gameserver_json():
     msj['id'] = 1
     msj['name'] = 'MSJ'
     msj['status'] = 'online'
+    msj['server_address'] = '192.168.0.27:5000'
     msj['start_button'] = True
     msj['download_button'] = True
 
@@ -14,6 +15,7 @@ def create_gameserver_json():
     fact['id'] = 2
     fact['name'] = 'Factorio'
     fact['status'] = 'offline'
+    fact['server_address'] = 'gameserver.zuern.xyz:6001'
     fact['stat_button'] = False
     fact['download_button'] = True
     

@@ -98,5 +98,16 @@ def update_status(d):
     menager.set_server_status(d)
     emit('stat', menager.get_data(), broadcast=True)
 
+@socket.on('start_game_server')
+@authenticated_only
+def start_game_server(id):
+    print('hallo aus start_game_server')
+
+@socket.on('stop_game_server')
+@authenticated_only
+def stop_game_server(id):
+    print('stop game server ' + str(id))
+
+
     
 

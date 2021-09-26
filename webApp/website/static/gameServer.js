@@ -63,45 +63,76 @@ function get_start_button(status)
     return button;
 }
 
+function start_stop_button_clicked(el, id)
+{
+    let signal = el.innerHTML.toLowerCase();
+    switch(signal)
+    {
+        case 'stop':
+            socket.emit('stop_game_server', id);
+            break;
+        case 'start':
+            socket.emit('start_game_server', id)
+            break;
+        default:
+            console.log('start_stop nicht möglich da status unbekannt')
+    }
+    console.log('stat_stop_button_clicked el = ' + el.innerHTML + ' und id = ' + id);
+}
+
 class gameServer
 {
     constructor(data)
     {
+        this.id = data['id']
+
         let tbody = document.getElementById('tbody');
         this.tr = document.createElement('tr');
         this.tr.id = data['name']
 
-        //add id
-        this.th_hash = document.createElement('th');
-        this.th_hash.setAttribute('scope', 'row');
-        this.th_hash.appendChild( document.createTextNode(data['id']) );
-        this.tr.appendChild(th_hash);
-
         //add name
         this.th_name = document.createElement('th');
+        this.th_name.setAttribute('scope', 'row');
         this.th_name.appendChild( document.createTextNode(data['name']));
-        this.tr.appendChild(th_name)
+        this.tr.appendChild(this.th_name)
 
         //add status
         this.th_status = document.createElement('th');
         this.th_status.appendChild( get_badge(data['status']));
-        this.tr.appendChild(th_status);
+        this.tr.appendChild(this.th_status);
+
+        //add server address
+        this.th_address = document.createElement('th')
+        this.th_address.appendChild( document.createTextNode(data['server_address']))
+        this.tr.appendChild(this.th_address)
 
         //add downlaod button
         this.th_download_button = document.createElement('th')
-        this.tr.appendChild(th_download_button)
+        this.tr.appendChild(this.th_download_button)
 
         //add start button
         this.th_start_button = document.createElement('th');
         if(data['start_button'])
         {
-            this.th_start_button.appendChild( get_start_button(data['status']));
+            let ssb = get_start_button(data['status']);
+            ssb.onclick = function()
+            {
+                start_stop_button_clicked(this, data['id'])
+            }
+            this.th_start_button.appendChild( ssb );
         }
-        tr.appendChild(th_start_button)
+        this.tr.appendChild(this.th_start_button)
 
-        tbody.appendChild(tr)
+        tbody.appendChild(this.tr)
     }
-    
+    update(data)
+    {
+        console.log(this.id + ' sollte jetzt updaten, mit folgenden daten: ' + data['id'])
+    }
+    remove()
+    {
+        console.log(this.name + ' sollte zerstört werden')
+    }
 }
 
 class gameServerMenager
@@ -109,5 +140,25 @@ class gameServerMenager
     constructor()
     {
         this.gs = []
+    }
+    update_game_server(gameServer_array)
+    {
+        if(gameServer_array != null)
+        {
+            for(let i of gameServer_array)
+            {
+                let temp = this.gs.find(x => x.id === i.id);
+                if(temp == undefined)
+                {
+                    let n = new gameServer(i);
+                    this.gs.push(n);
+                }
+                else
+                {
+                    temp.update(i);
+                }
+            }  
+        }
+        
     }
 }
