@@ -29,6 +29,10 @@ async def connect():
 async def disconnect():
     print('disconnected from server')
 
+@sio.on('stop_game_server_forward')
+def stop_game_server_forward(id):
+    print('hallo aus stop_game_server_forward mit id = ', id)
+
 
 async def main():
     await sio.connect(URL)

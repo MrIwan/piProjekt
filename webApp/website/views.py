@@ -56,6 +56,7 @@ def connect():
 def disconn():
     print("[CLIENT DISCONNECTED]:", request.sid)
     if request.sid == SERVER_SID:
+        menager.phyServer.status = 'offline'
         emit('stat', menager.get_data(), broadcast=True)
     else:
         try:
@@ -90,7 +91,7 @@ def server_online():
     global SERVER_SID
     SERVER_SID = str(request.sid)
 
-    menager.start()
+    menager.phyServer.status = 'online'
     emit('stat', menager.get_data(), broadcast=True, include_self=False)
 
 @socket.on('update_status')
@@ -101,12 +102,16 @@ def update_status(d):
 @socket.on('start_game_server')
 @authenticated_only
 def start_game_server(id):
+    global SERVER_SID
+    emit('start_game_server_forward', id, room=SERVER_SID)
     print('hallo aus start_game_server')
 
 @socket.on('stop_game_server')
 @authenticated_only
 def stop_game_server(id):
-    print('stop game server ' + str(id))
+    global SERVER_SID
+    print('stop game server ', id)
+    emit('stop_game_server_forward', id, room=SERVER_SID)
 
 
     

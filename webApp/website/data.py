@@ -16,12 +16,23 @@ class PhysicalServer:
             self.status = 'offline'
         print('hallo aus stop')
 
+class VirtualServer:
+    def __init__(self):
+        self.sp = None
+        self.status = 'offline'
+    def get_status(self):
+        return self.status
+    def start(self):
+        print('start macht nichts, du musst es selber steuern')
+    def stop(self):
+        print('stop macht nichts, du musst es selber steuern')
+
 class Menager:
     def __init__(self):
         self.user_online = []
         self.game_server = None
         self.system_info = {}
-        self.phyServer = PhysicalServer()
+        self.phyServer = VirtualServer()
     def get_data(self):
         data = {}
         data['status'] = self.phyServer.get_status()

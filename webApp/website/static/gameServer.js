@@ -80,6 +80,14 @@ function start_stop_button_clicked(el, id)
     console.log('stat_stop_button_clicked el = ' + el.innerHTML + ' und id = ' + id);
 }
 
+function remove_all_childs(el)
+{
+    while(el.firstChild())
+    {
+        el.removeChild( el.firstChild() )
+    }
+}
+
 class gameServer
 {
     constructor(data)
@@ -117,7 +125,7 @@ class gameServer
             let ssb = get_start_button(data['status']);
             ssb.onclick = function()
             {
-                start_stop_button_clicked(this, data['id'])
+                start_stop_button_clicked(this, data['name'])
             }
             this.th_start_button.appendChild( ssb );
         }
@@ -127,11 +135,40 @@ class gameServer
     }
     update(data)
     {
-        console.log(this.id + ' sollte jetzt updaten, mit folgenden daten: ' + data['id'])
+        //check if name changed
+        if(this.th_name.innerHTML != data['name'])
+        {
+            remove_all_childs(this.th_name);
+            this.th_name.appendChild( document.createTextNode(data['name']));
+        }
+        //check if status changed
+        if(this.th_status.firstChild.innerHTML != data['status'])
+        {
+            remove_all_childs(this.th_status);
+            this.th_status.appendChild( get_badge(data['status']))
+
+            remove_all_childs(this.th_start_button);
+            let ssb = get_start_button(data['status']);
+            ssb.onclick = function()
+            {
+                start_stop_button_clicked(this, data['name'])
+            }
+            this.th_start_button.appendChild( ssb );
+        }
+        //check if server address changed
+        if(this.th_address.innerHTML != data['server_address'])
+        {
+            remove_all_childs(this.th_address);
+            this.th_address.appendChild( document.createTextNode(data['server_address']));
+        }
+        //check if download status changed
+
+        //check if button changed
     }
     remove()
     {
-        console.log(this.name + ' sollte zerstört werden')
+        // TODO: handle remove event currectly
+        console.log(this.name + ' sollte zerstört werden');
     }
 }
 
