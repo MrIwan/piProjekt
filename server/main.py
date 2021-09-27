@@ -1,21 +1,24 @@
 import asyncio
 import socketio
-from server.gameServer import GameServer
+from server.gameServerMenager import GameServerMenager
 from server.auslastung import Workload, get_system_status
 
 URL = 'http://localhost:5000'
 
 sio = socketio.AsyncClient()
 
-game_server = GameServer()
-workload = Workload()
+server_menager = GameServerMenager()
+
+def collect_all_data():
+    data = {}
+    data['game_server'] = server_menager.get_available()
+    data['status'] = get_system_status()
+    return data
 
 
 async def update_status(my_argument):
     while True:
-        data = {}
-        data['game_server'] = game_server.get_available()
-        data['status'] = get_system_status()
+        data = collect_all_data()
         await sio.emit('update_status', data)
         await sio.sleep(5)
 
@@ -29,9 +32,15 @@ async def connect():
 async def disconnect():
     print('disconnected from server')
 
+@sio.on('start_game_server_forward')
+async def start_game_server_forward(id):
+    server_menager.start_game_server(id)
+    await sio.emit('update_status', collect_all_data())
+
 @sio.on('stop_game_server_forward')
-def stop_game_server_forward(id):
-    print('hallo aus stop_game_server_forward mit id = ', id)
+async def stop_game_server_forward(id):
+    server_menager.stop_game_server(id)
+    await sio.emit('update_status', collect_all_data())
 
 
 async def main():

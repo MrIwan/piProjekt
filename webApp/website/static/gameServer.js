@@ -82,9 +82,9 @@ function start_stop_button_clicked(el, id)
 
 function remove_all_childs(el)
 {
-    while(el.firstChild())
+    while(el.firstChild)
     {
-        el.removeChild( el.firstChild() )
+        el.removeChild( el.firstChild )
     }
 }
 
@@ -125,7 +125,7 @@ class gameServer
             let ssb = get_start_button(data['status']);
             ssb.onclick = function()
             {
-                start_stop_button_clicked(this, data['name'])
+                start_stop_button_clicked(this, data['id'])
             }
             this.th_start_button.appendChild( ssb );
         }
@@ -151,7 +151,7 @@ class gameServer
             let ssb = get_start_button(data['status']);
             ssb.onclick = function()
             {
-                start_stop_button_clicked(this, data['name'])
+                start_stop_button_clicked(this, data['id'])
             }
             this.th_start_button.appendChild( ssb );
         }

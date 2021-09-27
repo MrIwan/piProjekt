@@ -15,6 +15,6 @@ class Workload:
 
 def get_system_status():
     stat = {}
-    stat['cpu_percent'] = psutil.cpu_percent(1)
+    stat['cpu_percent'] = psutil.cpu_percent()
     stat['virtual_memory'] = psutil.virtual_memory()[2]
     return stat
