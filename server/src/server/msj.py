@@ -1,11 +1,5 @@
 import asyncio
-import subprocess
 import time
-
-class sub:
-    def __init__(self):
-        self.args = 'java -Xmx1024M -Xms1024M -jar minecraft_server.jar nogui'.split()
-        self.process = None
 
 
 class MSJ:
@@ -27,18 +21,8 @@ class MSJ:
         data['download_button'] = self.download_button
         return data
     def start(self):
-        self.instanz = subprocess.Popen('java -Xmx1024M -Xms1024M -jar server.jar nogui'.split(), stdin=subprocess.PIPE, text=True)
         self.status = 'online'
     def stop(self):
-        self.instanz.terminate()
         self.status = 'offline'
     def command(self, command):
-        self.instanz.stdin.write(b'{command}\n')
-
-msj = MSJ()
-
-msj.start()
-
-time.sleep(30)
-
-msj.stop()
+        print('command eingegeben: ', command)

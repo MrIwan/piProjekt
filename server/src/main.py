@@ -3,7 +3,7 @@ import socketio
 from server.gameServerMenager import GameServerMenager
 from server.auslastung import Workload, get_system_status
 
-URL = 'http://localhost:5000'
+URL = 'http://127.0.0.1:5000/'
 
 sio = socketio.AsyncClient()
 

@@ -1,0 +1,5 @@
+flask
+Flask-SQLAlchemy
+Flask-SocketIO
+Flask-Login
+Flask-Migrate
