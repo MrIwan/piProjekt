@@ -1,0 +1,59 @@
+[18:59:56] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[18:59:56] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[18:59:56] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[18:59:56] [main/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[18:59:56] [main/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[18:59:56] [main/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[18:59:56] [main/INFO]: Reloading ResourceManager: Default
+[18:59:57] [Worker-Main-12/INFO]: Loaded 7 recipes
+[18:59:57] [Worker-Main-12/INFO]: Loaded 1137 advancements
+[18:59:58] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[18:59:58] [Server thread/INFO]: Loading properties
+[18:59:58] [Server thread/INFO]: Default game type: SURVIVAL
+[18:59:58] [Server thread/INFO]: Generating keypair
+[18:59:58] [Server thread/INFO]: Starting Minecraft server on *:25565
+[18:59:58] [Server thread/INFO]: Using epoll channel type
+[18:59:59] [Server thread/INFO]: Preparing level "world"
+[19:00:02] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[19:00:03] [Worker-Main-14/INFO]: Preparing spawn area: 0%
+[19:00:03] [Worker-Main-14/INFO]: Preparing spawn area: 0%
+[19:00:03] [Worker-Main-8/INFO]: Preparing spawn area: 0%
+[19:00:04] [Worker-Main-10/INFO]: Preparing spawn area: 0%
+[19:00:04] [Worker-Main-13/INFO]: Preparing spawn area: 0%
+[19:00:05] [Worker-Main-10/INFO]: Preparing spawn area: 1%
+[19:00:05] [Worker-Main-10/INFO]: Preparing spawn area: 2%
+[19:00:06] [Worker-Main-8/INFO]: Preparing spawn area: 2%
+[19:00:06] [Worker-Main-10/INFO]: Preparing spawn area: 2%
+[19:00:07] [Worker-Main-10/INFO]: Preparing spawn area: 2%
+[19:00:07] [Worker-Main-12/INFO]: Preparing spawn area: 5%
+[19:00:08] [Worker-Main-12/INFO]: Preparing spawn area: 8%
+[19:00:08] [Worker-Main-11/INFO]: Preparing spawn area: 8%
+[19:00:09] [Worker-Main-12/INFO]: Preparing spawn area: 13%
+[19:00:09] [Worker-Main-13/INFO]: Preparing spawn area: 15%
+[19:00:10] [Worker-Main-9/INFO]: Preparing spawn area: 18%
+[19:00:10] [Worker-Main-10/INFO]: Preparing spawn area: 20%
+[19:00:11] [Worker-Main-10/INFO]: Preparing spawn area: 25%
+[19:00:11] [Worker-Main-9/INFO]: Preparing spawn area: 29%
+[19:00:12] [Worker-Main-14/INFO]: Preparing spawn area: 32%
+[19:00:12] [Worker-Main-12/INFO]: Preparing spawn area: 37%
+[19:00:13] [Worker-Main-9/INFO]: Preparing spawn area: 39%
+[19:00:14] [Worker-Main-12/INFO]: Preparing spawn area: 44%
+[19:00:14] [Worker-Main-13/INFO]: Preparing spawn area: 48%
+[19:00:14] [Worker-Main-10/INFO]: Preparing spawn area: 53%
+[19:00:15] [Worker-Main-14/INFO]: Preparing spawn area: 58%
+[19:00:16] [Worker-Main-13/INFO]: Preparing spawn area: 61%
+[19:00:16] [Worker-Main-12/INFO]: Preparing spawn area: 63%
+[19:00:16] [Worker-Main-12/INFO]: Preparing spawn area: 69%
+[19:00:17] [Worker-Main-8/INFO]: Preparing spawn area: 72%
+[19:00:17] [Worker-Main-13/INFO]: Preparing spawn area: 77%
+[19:00:18] [Worker-Main-12/INFO]: Preparing spawn area: 85%
+[19:00:18] [Worker-Main-14/INFO]: Preparing spawn area: 89%
+[19:00:19] [Worker-Main-8/INFO]: Preparing spawn area: 96%
+[19:00:19] [Server thread/INFO]: Time elapsed: 16817 ms
+[19:00:19] [Server thread/INFO]: Done (20.711s)! For help, type "help"
+[19:00:19] [Server thread/INFO]: Starting remote control listener
+[19:00:19] [Server thread/INFO]: Thread RCON Listener started
+[19:00:19] [Server thread/INFO]: RCON running on 0.0.0.0:25575
+[19:00:22] [User Authenticator #1/INFO]: UUID of player peacemaker1940 is 34b4fdb6-066b-49ef-843f-6e3f6a311db2
+[19:00:23] [Server thread/INFO]: peacemaker1940[/172.17.0.1:54324] logged in with entity id 427 at (125.5, 64.0, -16.5)
+[19:00:23] [Server thread/INFO]: peacemaker1940 joined the game

@@ -10,15 +10,27 @@ let cRam = new gaugeChart('Ram', document.getElementById("ChartRam"));
 //class which representes all the availible game server
 let gs_menager = new gameServerMenager()
 
+//class which meages all online user
+let user_menager = new userOnlineMenager()
+
 //socket for updating server status
 let socket = io({autoConnect:false})
 socket.connect()
 
 function display_on_of_switcher(display)
 {
-    document.getElementById('ChartCpu').style.display = display;
-    document.getElementById('ChartRam').style.display = display;
-    document.getElementById('available_server').style.display = display;
+    if(display == 'none')
+    {
+        $("#ChartCpu").fadeOut();
+        $("#ChartRam").fadeOut();
+        $("#available_server").fadeOut();
+    }
+    else if(display == 'block')
+    {
+        $("#ChartCpu").fadeIn();
+        $("#ChartRam").fadeIn();
+        $("#available_server").fadeIn();
+    }
 }
 
 function update_charts(stat)
@@ -96,4 +108,5 @@ socket.on('stat', function(s)
     console.log(stat);
     update_status(stat['status'], stat['system_info']);
     gs_menager.update_game_server(stat['game_server']);
+    user_menager.update_online_user(stat['user_online'])
 })
