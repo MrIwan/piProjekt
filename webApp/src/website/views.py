@@ -37,6 +37,16 @@ socket.start_background_task(update_task)
 def home():
     return render_template("home.html", user=current_user)
 
+@views.route('/user_info', methods=['GET'])
+@login_required
+def user_info():
+    dat = {}
+    dat['id'] = current_user.id
+    dat['email'] = current_user.email
+    dat['first_name'] = current_user.first_name
+    dat['avatar'] = current_user.avatar()
+    return dat
+
 @socket.on('connect')
 def connect():
 
@@ -45,9 +55,15 @@ def connect():
     try:
         current_user_id = current_user.get_id()
         user = User.query.filter_by(id=current_user_id).first()
-        menager.add_user(user.first_name)
+
+        dat = {}
+        dat['id'] = user.id
+        dat['email'] = user.email
+        dat['first_name'] = user.first_name
+        dat['avatar'] = user.avatar()
+        menager.add_user(dat)
+
         emit('stat', data.get_data(), broadcast=True)
-        print(user)
     except:
         print('server connected')
 
@@ -63,7 +79,7 @@ def disconn():
         try:
             current_user_id = current_user.get_id()
             user = User.query.filter_by(id=current_user_id).first()
-            menager.remove_user(user.first_name)
+            menager.remove_user(user.id)
             emit('stat', menager.get_data(), broadcast=True)
         except:
             print('no user')

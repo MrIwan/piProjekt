@@ -48,8 +48,9 @@ class Menager:
         if not c in self.user_online:
             self.user_online.append(c)
     def remove_user(self, c):
-        if c in self.user_online:
-            self.user_online.remove(c)
+        for u in self.user_online:
+            if u.id == c:
+                
     def set_server_status(self, gs):
         self.game_server = gs['game_server']
         self.system_info = gs['status']

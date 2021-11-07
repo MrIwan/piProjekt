@@ -13,6 +13,10 @@ let user_menager = new userOnlineMenager()
 //class which menages the user chat
 let chat_menager = new chatMenager()
 
+//variable to store data of the current user
+let current_user = null
+fetch('http://127.0.0.1:5000/user_info').then(response => response.json()).then(data => current_user = data)
+
 //socket for updating server status
 let socket = io({autoConnect:false})
 socket.connect()
@@ -140,6 +144,6 @@ socket.on('stat', function(stat)
     }
     if(stat['message'] != null)
     {
-        chat_menager.new_message(stat['message'])
+        chat_menager.new_message(stat['message'], current_user)
     }
 })

@@ -1,5 +1,13 @@
 'use strict'
 
+class messageBlock
+{
+    constructor(m)
+    {
+        this.current_time = 'hallo';
+    }
+}
+
 class chatMenager
 {
     constructor()
@@ -9,16 +17,22 @@ class chatMenager
     }
     new_message(m)
     {
-        console.log(m)
+        console.log(m, current_user)
         let media = document.createElement("div");
-        media.className = "media media-chat";
-        media.display ="none";
+        
+        if(m['author'] == current_user['first_name'])
+        {
+            media.className = "media media-chat media-chat-reverse";
+        }
+        else
+        {
+            media.className = "media media-chat";
+            let img = document.createElement("img");
+            img.className = "avatar";
+            img.src = m["author_avatar"];
+            media.appendChild(img);
+        }
         this.chat.appendChild(media)
-
-        let img = document.createElement("img");
-        img.className = "avatar";
-        img.src = m["author_avatar"];
-        media.appendChild(img);
 
         let media_body = document.createElement("div");
         media_body.className = "media-body";
