@@ -60,20 +60,17 @@
             <br />
             <div class="p-3 border bg-light" style="height: 60vh;">
                 <div class="chat">
-                    <div class="header" style="height: 10%;">
-                        <h2>Chat und Logs</h2>
-                    </div>
-                    <div class="chat_content" style="height: 80%;">
-
-                    </div>
-                    <div class="chat_send" style="height: 10%;">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="message">
-                            <button class="btn btn-outline-secondary" type="button">Send</button>
+                    <div class="row">
+                        <div class="col">
+                            <div class="ps-container ps-theme-default ps-active-y" id="chat_box" style="overflow-y: scroll !important; height: 55vh !important;">
+                                <div id="chat_content">
+                                </div>
+                                
+                                <div class="publisher bt-1 border-light"> <input class="publisher-input" id="chat_input" type="text" placeholder="Write something"><a class="publisher-btn text-info" id="chat_send_btn" data-abc="true"><i class="fa fa-paper-plane"></i></a> </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                
             </div> 
         </div>
     </div>
@@ -101,8 +98,13 @@
 ></script>
 <script
     type="text/javascript"
+    src="{{ url_for('static', filename='chatMenager.js') }}"
+></script>
+<script
+    type="text/javascript"
     src="{{ url_for('static', filename='home.js') }}"
 ></script>
+
 
 
 {% endblock %} 

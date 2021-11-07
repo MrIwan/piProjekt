@@ -47,6 +47,7 @@ def connect():
         user = User.query.filter_by(id=current_user_id).first()
         menager.add_user(user.first_name)
         emit('stat', data.get_data(), broadcast=True)
+        print(user)
     except:
         print('server connected')
 
@@ -112,6 +113,18 @@ def stop_game_server(id):
     global SERVER_SID
     print('stop game server ', id)
     emit('stop_game_server_forward', id, room=SERVER_SID)
+
+@socket.on('new_chat_message')
+@authenticated_only
+def new_chat_message(msg):
+    print('message was ', msg)
+    dat = {}
+    message = {}
+    message['message'] = msg
+    message['author'] = current_user.first_name
+    message['author_avatar'] = current_user.avatar()
+    dat['message'] = message
+    emit('stat', dat, broadcast=True, include_self=True )
 
 
     

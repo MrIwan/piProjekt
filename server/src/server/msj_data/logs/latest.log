@@ -1,61 +1,61 @@
-[19:57:03] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[19:57:03] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[19:57:03] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[19:57:03] [main/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[19:57:03] [main/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[19:57:03] [main/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[19:57:03] [main/INFO]: Reloading ResourceManager: Default
-[19:57:04] [Worker-Main-12/INFO]: Loaded 7 recipes
-[19:57:05] [Worker-Main-12/INFO]: Loaded 1137 advancements
-[19:57:06] [Server thread/INFO]: Starting minecraft server version 1.17.1
-[19:57:06] [Server thread/INFO]: Loading properties
-[19:57:06] [Server thread/INFO]: Default game type: SURVIVAL
-[19:57:06] [Server thread/INFO]: Generating keypair
-[19:57:06] [Server thread/INFO]: Starting Minecraft server on *:25565
-[19:57:06] [Server thread/INFO]: Using epoll channel type
-[19:57:06] [Server thread/INFO]: Preparing level "world"
-[19:57:06] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[19:57:07] [Worker-Main-14/INFO]: Preparing spawn area: 0%
-[19:57:07] [Worker-Main-9/INFO]: Preparing spawn area: 0%
-[19:57:10] [Worker-Main-12/INFO]: Preparing spawn area: 0%
-[19:57:10] [Worker-Main-10/INFO]: Preparing spawn area: 0%
-[19:57:10] [Worker-Main-12/INFO]: Preparing spawn area: 0%
-[19:57:10] [Worker-Main-10/INFO]: Preparing spawn area: 0%
-[19:57:10] [Worker-Main-12/INFO]: Preparing spawn area: 0%
-[19:57:10] [Worker-Main-8/INFO]: Preparing spawn area: 0%
-[19:57:10] [Worker-Main-8/INFO]: Preparing spawn area: 0%
-[19:57:11] [Worker-Main-13/INFO]: Preparing spawn area: 25%
-[19:57:11] [Worker-Main-13/INFO]: Preparing spawn area: 67%
-[19:57:12] [Worker-Main-11/INFO]: Preparing spawn area: 83%
-[19:57:12] [Worker-Main-11/INFO]: Preparing spawn area: 88%
-[19:57:13] [Worker-Main-10/INFO]: Preparing spawn area: 97%
-[19:57:13] [Server thread/INFO]: Time elapsed: 6634 ms
-[19:57:13] [Server thread/INFO]: Done (6.753s)! For help, type "help"
-[19:57:13] [Server thread/INFO]: Starting remote control listener
-[19:57:13] [Server thread/INFO]: Thread RCON Listener started
-[19:57:13] [Server thread/INFO]: RCON running on 0.0.0.0:25575
-[19:57:17] [User Authenticator #1/INFO]: UUID of player peacemaker1940 is 34b4fdb6-066b-49ef-843f-6e3f6a311db2
-[19:57:17] [Server thread/INFO]: peacemaker1940[/172.17.0.1:36686] logged in with entity id 215 at (166.22613923571976, 63.0, -443.30000001192093)
-[19:57:17] [Server thread/INFO]: peacemaker1940 joined the game
-[19:57:21] [Server thread/WARN]: Can't keep up! Is the server overloaded? Running 2021ms or 40 ticks behind
-[20:07:21] [Server thread/INFO]: peacemaker1940 suffocated in a wall
-[20:08:12] [Server thread/INFO]: peacemaker1940 was slain by Zombie
-[20:08:13] [Server thread/WARN]: peacemaker1940 moved too quickly! -68.23212720017074,1.0,133.25230231017173
-[20:22:51] [Server thread/INFO]: peacemaker1940 has made the advancement [Sweet Dreams]
-[20:23:43] [Server thread/INFO]: peacemaker1940 has made the advancement [The Parrots and the Bats]
-[20:24:31] [Server thread/INFO]: peacemaker1940 lost connection: Disconnected
-[20:24:31] [Server thread/INFO]: peacemaker1940 left the game
-[21:00:34] [RCON Listener #1/INFO]: Thread RCON Client /127.0.0.1 started
-[21:00:34] [Server thread/INFO]: [Rcon: Stopping the server]
-[21:00:34] [RCON Client /127.0.0.1 #2/INFO]: Thread RCON Client /127.0.0.1 shutting down
-[21:00:34] [Server thread/INFO]: Stopping server
-[21:00:34] [Server thread/INFO]: Saving players
-[21:00:34] [Server thread/INFO]: Saving worlds
-[21:00:34] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
-[21:00:34] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
-[21:00:34] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
-[21:00:34] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
-[21:00:34] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[21:00:34] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[21:00:34] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
-[21:00:34] [Server thread/INFO]: Thread RCON Listener stopped
+[13:24:16] [main/INFO]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[13:24:16] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[13:24:16] [main/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[13:24:16] [main/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[13:24:16] [main/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[13:24:16] [main/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[13:24:16] [main/INFO]: Reloading ResourceManager: Default
+[13:24:17] [Worker-Main-12/INFO]: Loaded 7 recipes
+[13:24:17] [Worker-Main-12/INFO]: Loaded 1137 advancements
+[13:24:19] [Server thread/INFO]: Starting minecraft server version 1.17.1
+[13:24:19] [Server thread/INFO]: Loading properties
+[13:24:19] [Server thread/INFO]: Default game type: SURVIVAL
+[13:24:19] [Server thread/INFO]: Generating keypair
+[13:24:19] [Server thread/INFO]: Starting Minecraft server on *:25565
+[13:24:19] [Server thread/INFO]: Using epoll channel type
+[13:24:19] [Server thread/INFO]: Preparing level "world"
+[13:24:19] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[13:24:20] [Worker-Main-8/INFO]: Preparing spawn area: 0%
+[13:24:20] [Worker-Main-12/INFO]: Preparing spawn area: 0%
+[13:24:20] [Worker-Main-9/INFO]: Preparing spawn area: 0%
+[13:24:21] [Worker-Main-13/INFO]: Preparing spawn area: 1%
+[13:24:24] [Worker-Main-13/INFO]: Preparing spawn area: 1%
+[13:24:24] [Worker-Main-12/INFO]: Preparing spawn area: 1%
+[13:24:24] [Worker-Main-13/INFO]: Preparing spawn area: 1%
+[13:24:24] [Worker-Main-8/INFO]: Preparing spawn area: 1%
+[13:24:24] [Worker-Main-12/INFO]: Preparing spawn area: 1%
+[13:24:24] [Worker-Main-8/INFO]: Preparing spawn area: 4%
+[13:24:24] [Worker-Main-14/INFO]: Preparing spawn area: 44%
+[13:24:25] [Worker-Main-12/INFO]: Preparing spawn area: 83%
+[13:24:25] [Worker-Main-11/INFO]: Preparing spawn area: 94%
+[13:24:26] [Worker-Main-8/INFO]: Preparing spawn area: 99%
+[13:24:26] [Server thread/INFO]: Time elapsed: 6606 ms
+[13:24:26] [Server thread/INFO]: Done (6.675s)! For help, type "help"
+[13:24:26] [Server thread/INFO]: Starting remote control listener
+[13:24:26] [Server thread/INFO]: Thread RCON Listener started
+[13:24:26] [Server thread/INFO]: RCON running on 0.0.0.0:25575
+[13:24:52] [User Authenticator #1/INFO]: UUID of player peacemaker1940 is 34b4fdb6-066b-49ef-843f-6e3f6a311db2
+[13:24:52] [Server thread/INFO]: peacemaker1940[/172.17.0.1:34032] logged in with entity id 235 at (168.1500384840536, 63.0, -443.30000001192093)
+[13:24:52] [Server thread/INFO]: peacemaker1940 joined the game
+[13:25:40] [Server thread/INFO]: peacemaker1940 lost connection: Disconnected
+[13:25:40] [Server thread/INFO]: peacemaker1940 left the game
+[13:49:47] [Server thread/WARN]: handleDisconnection() called twice
+[16:42:19] [User Authenticator #2/INFO]: UUID of player peacemaker1940 is 34b4fdb6-066b-49ef-843f-6e3f6a311db2
+[16:42:19] [Server thread/INFO]: peacemaker1940[/172.17.0.1:33868] logged in with entity id 467 at (167.30000001192093, 63.0, -446.6154740649131)
+[16:42:19] [Server thread/INFO]: peacemaker1940 joined the game
+[16:42:39] [Server thread/INFO]: peacemaker1940 lost connection: Disconnected
+[16:42:39] [Server thread/INFO]: peacemaker1940 left the game
+[16:50:14] [RCON Listener #1/INFO]: Thread RCON Client /127.0.0.1 started
+[16:50:14] [Server thread/INFO]: [Rcon: Stopping the server]
+[16:50:14] [RCON Client /127.0.0.1 #2/INFO]: Thread RCON Client /127.0.0.1 shutting down
+[16:50:14] [Server thread/INFO]: Stopping server
+[16:50:14] [Server thread/INFO]: Saving players
+[16:50:14] [Server thread/INFO]: Saving worlds
+[16:50:14] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[16:50:14] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[16:50:14] [Server thread/INFO]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[16:50:14] [Server thread/INFO]: ThreadedAnvilChunkStorage (world): All chunks are saved
+[16:50:14] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[16:50:14] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[16:50:14] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[16:50:14] [Server thread/INFO]: Thread RCON Listener stopped
