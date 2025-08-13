@@ -1,6 +1,15 @@
-# piProjekt
+# **piPowerManager**
+*Discord-gesteuerter PC-Powerbutton zum Stromsparen*
 
+**Funktion**:
+Ein **Raspberry Pi** steuert über **GPIO** den Power-Button eines Tower-PCs.
 
-server - Alles was auf dem Server PC laufen soll.
+**Aufbau**:
+| Komponente       | Rolle                          |
+|------------------|--------------------------------|
+| **Raspberry Pi** | Hostet Bot + Watchdog-Skript.  |
+| **GPIO-Pin**     | Simuliert Power-Button-Druck.  |
+| **Tower-PC**     | Läuft nur bei Bedarf.          |
 
-webApp - die Webseite und der discord Bot sollen auf dem Pi laufen. Hier soll auch der Server-PC an und abgeschaltet werden.
+**Voraussetzungen**:
+- GPIO ↔ Mainboard (`PWR_SW`) verdrahten.
