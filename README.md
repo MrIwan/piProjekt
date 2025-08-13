@@ -13,3 +13,19 @@ Ein **Raspberry Pi** steuert über **GPIO** den Power-Button eines Tower-PCs.
 
 **Voraussetzungen**:
 - GPIO ↔ Mainboard (`PWR_SW`) verdrahten.
+
+# Nutzung
+
+### **Docker-Compose (Beispielbefehle)**
+```bash
+# Starten (im Hintergrund)
+docker-compose up -d
+
+# Stoppen
+docker-compose down
+
+# Logs anzeigen
+docker-compose logs -f
+
+# Neubau der Container (nach Änderungen)
+docker-compose build --no-cache
